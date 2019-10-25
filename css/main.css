@@ -1,0 +1,31 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+background-color: aqua;
+display: flex;
+align-items: center;
+font-family: Arial, Helvetica, sans-serif;
+    }
+
+.tictac {
+display: grid;
+grid-template-columns: auto auto auto;
+border: dashed 2px red; 
+height: 600px;
+width: 600px;
+
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    border: solid 2px white;
+    padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+
