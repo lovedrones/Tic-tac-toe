@@ -2,25 +2,34 @@
 <html>
    
     <head>
-<meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="css/main.css"></link>
+
 <title>Tic-Tac-Toe</title>
-<header>TIC TAC TOE</header><br>
+
     </head>
     <body>
+        <h1>TIC TAC TOE</h1><br>
+        <h2>It's X's turn!</h2>
+<div class="flex-container flex-column">
+<div class="flex-container flex-wrap" id="board">
 
-<div class ="tictac">
-    <div class ="square">X</div>
-    <div class ="square">O</div>
-    <div class ="square">X</div>
-    <div class ="square">O</div>
-    <div class ="square">X</div>
-    <div class ="square">O</div>
-    <div class ="square">X</div>
-    <div class ="square">O</div>
-    <div class ="square">X</div>
+    <div class ="square"></div>
+    <div class ="square"></div>
+    <div class ="square"></div>
+    <div class ="square"></div>
+    <div class ="square"></div>
+    <div class ="square"></div>
+    <div class ="square"></div>
+    <div class ="square"></div>
+    <div class ="square"></div>
     
     </div>
-    <script src="js/ttc.js"></script>
+    
+</div>
+<button id="reset">reset</button>
+    <script defer src="js/main.js"></script>
     </body>
 </html>
