@@ -10,7 +10,7 @@ const winningCombos = [
     [2, 4, 6]
     ];
 
-/*----- app's state (variables) -----*/
+/*----- variables -----*/
 var board;
 var turn = 'X';
 var win;
@@ -21,20 +21,13 @@ const squares = Array.from(document.querySelectorAll('#board div'));
 
 /*----- event listeners -----*/
 
-
-document.getElementById('board').addEventListener('click', handleTurn);
+document.getElementById('board').addEventListener('click', headTurn);
 
 const messages = document.querySelector('h2');
 
-document.getElementById('reset-button').addEventListener('click', init);
+document.getElementById('reset').addEventListener('click', init);
 
-// const ticTac  = [
-//     ['','',''],
-//     ['','',''],
-//     ['','',''],
-// ];
-// const p1 = 'X';
-// const p2 = 'O';
+ 
 
 /*----------functions--------------*/ 
 function getWinner() {
@@ -45,7 +38,10 @@ function getWinner() {
         return winner ? winner : board.includes('') ? null : 'T';
 };
 
-function handleTurn() {
+function headTurn(evt) {
+    if (evt.target.textContent === 'X' || evt.target.textContent === 'O') {
+        return;
+    }
     let idx = squares.findIndex(function(square) {
         return square === event.target;
     });
@@ -53,7 +49,11 @@ function handleTurn() {
     turn = turn === 'X' ? 'O' : 'X';
     win = getWinner();
     render();
-};
+ 
+     };
+    
+    
+
 function init() {
     board = [
     '', '', '',
@@ -68,37 +68,7 @@ function render() {
    
     squares[index].textContent = mark;
     });
-    messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    messages.textContent = win === 'T' ? `Tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
     };
 
 init();
-
-// function setup() {
-//     createCanvas(400, 400);
-// }
-// function draw() {
-//     background(220);
-//     let w = width / 3;
-//     let y = height / 3;
-//     for (let i  = 0; i < 3; i++){
-//         for (let j = 0; j < 3; j++){
-//             let x = w * i + w/2;
-//             let y = h * j + h/2;
-//             let spot = tictac[i][j];
-//             textSize(32);
-//             strokeWeight(4);
-//             if (spot == p2){
-//                 nofill();
-//                 ellipse(x,y,w/2);
-//             } else if (spot == p1 ){
-//                 let xr = w/4;
-//                 line(x-xr, y-xr, x + xr, y + xr);
-//                 line(x + xr, y-xr, x, y + h);
-//             }            
-
-//         }
-//     }
-// }
-
-// console.log('Hello World');
-
